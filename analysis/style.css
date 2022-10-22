@@ -67,6 +67,10 @@ nav > a:visited {
 	color: white;
 }
 
+nav > a:hover {
+	opacity: 1;
+}
+
 article {
 	margin: 1.5vh;
 	padding: 1vh 5vw;
