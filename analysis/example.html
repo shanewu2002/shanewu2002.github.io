@@ -4,7 +4,59 @@
 		<title>Expository Essay Analysis: Example</title>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="style.css">
+		<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+		<script>
+			var menuOpen = false;
+
+			function showHideMenuItems (event) {
+				event.stopPropagation();
+				let menuItems = $('nav > a:not(:first-of-type)');
+				if (menuOpen) {
+					menuItems.css('display', 'none');
+					$('nav > a > span').removeClass('rotated');
+					menuOpen = false;
+				}
+				else {
+					menuItems.css('display', 'inline');
+					$('nav > a > span').addClass('rotated');
+					menuOpen = true;
+				}
+			}
+
+			function hideMenuItems () {
+				let menuItems = $('nav > a:not(:first-of-type)');
+				menuItems.css('display', 'none');
+				$('nav > a > span').removeClass('rotated');
+				menuOpen = false;
+			}
+
+			function checkRestoreSectionPos () {
+				let sections = $('section');
+				let vpHeight = $(window).height();
+				let scrollTop = $(window).scrollTop();
+				sections.each(function (index) {
+					let section = sections.eq(index);
+					let sectionTop = section.offset().top;
+					if (vpHeight + scrollTop - 100 > sectionTop) {
+						section.css('top', 0)
+					}
+				});
+			}
+
+			window.onload = function () {
+				let sections = $('section');
+				checkRestoreSectionPos();
+				$(document).on('scroll', checkRestoreSectionPos);
+				$('nav > a:first-of-type').on('click', showHideMenuItems);
+				$(document).on('click', hideMenuItems);
+			}
+		</script>
 		<style>
+			section {
+				position: relative;
+				top: 100px;
+			}
+
 			span.joint {
 				color: #a6611a;
 			}
@@ -35,10 +87,7 @@
 	</head>
 	<body>
 		<nav>
-			<a>+</a>
-			<a href="index.html">Home</a>
-			<a href="example.html">Essay Example</a>
-			<a href="analysis.html">Structural Analysis</a>
+			<a><span style="display: inline-block;">+</span></a><a href="index.html">Home</a><a href="example.html">Essay Example</a><a href="analysis.html">Structural Analysis</a>
 		</nav>
 		<article>
 			<h1>His Bees Fly to the Front Line. Soon, It May Come to Him.</h1>
@@ -59,6 +108,7 @@
 				<h3>[Sec. #2]</h3>
 				<p>Millions of Ukrainians have fled their homes since the war began more than six months ago. But many have stayed, sheltering in basements and elsewhere, resolute in their decision to brave the onslaught for <span class="vocab">a litany of<span><b>"a litany of sth"</b> - a long list of unpleasant and repeated things</span></span> reasons: nowhere else to go, no money, disabled family members, pro-Russian sentiments. The list goes on. <span class="joint">►</span>But Petro Fedorovych's decision to remain at his house with his bees and his wife, Ira, and their goat, Flower, was as simple as it gets: It was their home. It was a world unto itself, where even the destruction slowly encroaching felt more favorable than the unknown in the cities and towns beyond Russian artillery range. <span class="joint">►</span>"I built this house with my hands." he said late last month, his gray hair <span class="vocab">unkempt<span><b>"unkempt"</b> - untidy; not cared for</span></span> and sweat from a morning of beekeeping already forming on his brow. "I will never leave."</p>
 				<p>All wars are terrible, but the war in Ukraine stands out because of its brutal <span class="vocab">methodology<span><b>"methodology"</b> - a system of ways of doing, teaching, or studying something</span></span>. Artillery can turn villages like Bohdanivka into graveyards almost overnight. If Russian troops want to advance, they will do so slowly, chewing up virtually everything in their path with so much <span class="vocab">ordnance<span><b>"ordnance"</b> - military supplies, especially weapons and bombs</span></span> that uninterrupted moments of silence make a stomach-tightening anxiety a complement to the next horror.</p>
+			</section>
 			<section id="sec3">
 				<h3>[Sec. #3]</h3>
 				<p>Bohdanivka, with a population of around 150 people, lies between where Russian troops are now, and where they want to go: the rest of the Donbas, a region of rolling fields, mining towns and the hundreds of thousands of Petro Fedorovych's bees. <span class="joint">►</span>To Petro Fedorovych, who served in the Soviet Army at the height of the Cold War, Russia's invasion is neither an invasion nor a war; it is just "it." The war did not begin, "it began," he said. <span class="joint">►</span>"They are abusing the people, and that's it," he said, not naming Ukraine or Russia. The sharp crack of outgoing artillery fire sounded nearby. <span class="joint">►</span>After he left the military, he moved to Bohdanivka in 1972, where he worked long hours as a veterinarian on a collective dairy farm.</p>
