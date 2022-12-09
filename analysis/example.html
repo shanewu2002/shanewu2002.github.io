@@ -5,56 +5,35 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="style.css">
 		<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+		<script src="demo.js"></script>
 		<script>
-			var menuOpen = false;
-
-			function showHideMenuItems (event) {
-				event.stopPropagation();
-				let menuItems = $('nav > a:not(:first-of-type)');
-				if (menuOpen) {
-					menuItems.css('display', 'none');
-					$('nav > a > span').removeClass('rotated');
-					menuOpen = false;
-				}
-				else {
-					menuItems.css('display', 'inline');
-					$('nav > a > span').addClass('rotated');
-					menuOpen = true;
-				}
-			}
-
-			function hideMenuItems () {
-				let menuItems = $('nav > a:not(:first-of-type)');
-				menuItems.css('display', 'none');
-				$('nav > a > span').removeClass('rotated');
-				menuOpen = false;
-			}
-
-			function checkRestoreSectionPos () {
-				let sections = $('section');
+			function checkRestoreSecs () {
 				let vpHeight = $(window).height();
 				let scrollTop = $(window).scrollTop();
+				let sections = $('article > section');
 				sections.each(function (index) {
-					let section = sections.eq(index);
-					let sectionTop = section.offset().top;
-					if (vpHeight + scrollTop - 100 > sectionTop) {
-						section.css('top', 0)
+					let sectionTop = $(this).offset().top;
+					if(vpHeight + scrollTop - 100 > sectionTop) {
+						$(this).css('top', 0);
 					}
 				});
 			}
 
+			$(document).ready(function () {
+				
+			});
+
 			window.onload = function () {
-				let sections = $('section');
-				checkRestoreSectionPos();
-				$(document).on('scroll', checkRestoreSectionPos);
+				checkRestoreSecs();
+				$(document).on('scroll', checkRestoreSecs);
 				$('nav > a:first-of-type').on('click', showHideMenuItems);
 				$(document).on('click', hideMenuItems);
-			}
+			};
 		</script>
 		<style>
 			section {
 				position: relative;
-				top: 100px;
+				top: 50px;
 			}
 
 			span.joint {
