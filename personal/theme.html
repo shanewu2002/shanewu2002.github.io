@@ -4,16 +4,74 @@
 		<title>Shane Wu's Personal Website: Theme Article</title>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="style.css">
+		<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+		<script src="demo.js"></script>
+		<script>
+			function checkRestorePars () {
+				let vpHeight = $(window).height();
+				let scrollTop = $(window).scrollTop();
+				let paragraphs = $('section > p');
+				paragraphs.each(function (index) {
+					let paragraphTop = $(this).offset().top;
+					if(vpHeight + scrollTop - 100 > paragraphTop) {
+						$(this).addClass('scrolled');
+					}
+				});
+			}
+
+			$(document).ready(function () {
+				
+			});
+
+			window.onload = function () {
+				checkRestorePars();
+				$(document).on('scroll', checkRestorePars);
+				$('nav > a:first-of-type').on('click', showHideMenuItems);
+				$(document).on('click', hideMenuItems);
+			};
+		</script>
 	</head>
 	<body>
+		<img src="img/batman_joker_background.jpeg" class="background" />
 		<nav>
-			<a>+</a>
-			<a href="index.html">Home</a>
-			<a href="bio.html">Biography</a>
-			<a href="theme.html">Theme Article</a>
+			<a><span style="display: inline-block;">+</span></a><a href="index.html">Home</a><a href="bio.html">Biography</a><a href="theme.html">Theme Article</a>
 		</nav>
 		<article>
-			<h1>Theme</h1>
+			<section>
+				<h3>Batman - The Dark Knight and the Joker by Heath Ledger</h3>
+				<p>In the past few years, superhero movies have been dominating the movie industry. Many superheroes went from comic books onto the screen. Over the past decade, it seems that it is Marvel that led the entire industry. The series of the Marvel Universe have been pushing viewers from all walks of life into the theater, providing astonishing effects for the fans’ eyes and ears. Although there are tons of superhero movies now, it is commonly recognized that “Batman – The Dark knight” directed by Christopher Nolan, where Heath Ledger played the Joker remains the best superhero movie throughout the past few decades.</p>
+				<p>.</p>
+				<p>.</p>
+				<p>.</p>
+				<p>.</p>
+				<p>.</p>
+				<p>...summary of the movie will arrive in a few days...</p>
+				<p>.</p>
+				<p>.</p>
+				<p>.</p>
+				<p>.</p>
+				<p>.</p>
+				<p>Nolan’s Batman series contains three movies, and The Dark Knight is the second one, and is also regarded as the most successful one. There are many reasons behind the success of this movie. First of all, known as one of the greatest directors around the world, the directing skill of Nolan and the messages that he wanted to send to the world through this movie served as a milestone in the field of the superhero movie industry. In comparison with the superhero movies nowadays, The Dark Knight did not apply fancy sound or visual effects, which are nowadays, probably one of the most important elements in recent superhero movies. However, the arrangement of the story, the building of the tension, the surprising outcome of the next scene had captivated everyone’s attention. To this day, The Dark Knight may still be the only one “black” superhero movie. Unlike other superhero movies, which mostly dealt with the bright side of the main character, depicting stories about how he or she rises from the bottom to the top, fighting the evil and help others, The Dark Knight told a darker story. In the story, the main character, Batman, is faced with a lot of traps throughout the movie, and those traps are set for Batman in order to trick him into breaking his own rules, such as never kill people as well as always be selfless. In this way, Nolan shew through this movie that even the so-called heroes are not always 100% good; when it comes to personal interests, everyone is likely to be selfish.</p>
+				<p>On the other hand, another significant factor for the huge success of The Dark Knight is the Joker. The Joker is the one of the major villains in the Batman series comic books. Having remained the most attractive villain over the entire superhero story industry ever since he was created, the Joker literally “lives” at the top1 of the popularity rank for the villains. The Joker is different from other villains against superheroes. Normally, the villains tend to physically do harm to people, such as robbing or killing, and those villains usually commit crimes by themselves. However, the Joker is at the different level. Instead of hurting people directly, the Joker likes to set traps, and his favorite trap is to set people into dilemmas. The dilemmas are some situations that challenge the character of people. In the movie, we can see that the Joker challenges Batman to kill him, save Rachael, his lover, instead of Harvey Dent, the Light Knight of the Gotham City. Moreover, the Joker goes further and challenges the citizens and the criminals on the two ships whether or not to trigger the bombs and kill everyone on the other ship. We can see that the Joker loves to create chaos and trick people into his traps. In other words, normal villains hurt people, whereas the Joker destroys minds.</p>
+				<p>Although the Joker himself is already attractive, it was a 28-year-old actor that brought the Joker up to another level. Heath Ledger was an Australian actor; he played the Joker for The Dark Knight. After getting the role, Heath Ledger locked himself along inside a small room for over 40 days, for the purpose of studying the mental condition of the Joker and looking for the best way to play the role out. In order to present the accent and the tone of the Joker, Heath had to maintain moisture in his lips. As a result, he kept licking his lips while shooting the movie, and this became one of the most iconic signs of the Joker in The Dark Knight. The interpretation of Heath Ledger’s Joker was so impressive that all the actors were somewhat be afraid of him during the shooting. For the viewers, the Joker in The Dark Knight has created so much remarkable scenes. The crazy laughter and facial expressions, the classical “Why so serious?” and “How can you spell slaughter without laughter?” have long carved into all the viewers’ hearts. Unfortunately, Heath Ledger died from drug abuse on January 22, 2008, six months before the release of The Dark Knight. It is such a tragedy that Heath could never know that his Joker has received worldwide recognition and that he won the Academy Award for Best Actor in a Supporting Role as the Joker. Note that the death of Heath Ledger was so sensational that rumors were that Heath died because he was haunted by the character as the Joker.</p>
+			</section>
+			<section>
+				<h3>蝙蝠俠：黑暗騎士</h3>
+				<p>過去幾年來，超級英雄電影儼然已主宰了整個電影產業。許多漫畫書中的超級英雄被搬上大螢幕。過去十年來，漫威似乎引領了整個產業。漫威宇宙系列電影不斷地吸引不分老少、來自各行各業的觀眾進入電影院，提供粉絲們令人驚豔的聲光特效。雖然現在有許多超級英雄電影上映，但由克里斯多福諾蘭執導以及希斯萊傑出演小丑的「蝙蝠俠：黑暗騎士」依舊被普遍認為是近幾十年來最偉大的一部超級英雄電影。</p>
+				<p>.</p>
+				<p>.</p>
+				<p>.</p>
+				<p>.</p>
+				<p>.</p>
+				<p>...電影情節摘要會在之後補上...</p>
+				<p>.</p>
+				<p>.</p>
+				<p>.</p>
+				<p>.</p>
+				<p>.</p>
+				<p>諾蘭的蝙蝠俠系列一共有三部電影，而「黑暗騎士」是其中的第二部，也被認為是其中最優秀的一部作品。這部作品之所以如此成功，其背後有許多原因。首先，身為一位世界知名的導演，諾蘭的執導功力以及他透過這部電影想要傳達給世界的訊息都在超級英雄電影的領域中立下了一大里程碑。相較於現今的超級英雄電影，「黑暗騎士」並沒有使用炫酷的聲光特效，而聲光特效基本上是近期的超級英雄電影中最重要的元素之一。雖然如此，整部電影的情節安排、緊張刺激的氣氛營造以及許多令人意想不到的故事走向依舊相當引人入勝。直至今日，「黑暗騎士」也可能依舊是目前為止唯一一部「黑色超級英雄電影」。其他超級英雄主要探討的，都是主角的光明面，故事通常描繪主角是如何觸底反彈、逆風高飛，打擊惡勢力並幫助他人。與之不同的是，「黑暗騎士」闡述了一個較為黑暗的故事。在故事中，主角蝙蝠俠在整部電影中不斷地遭遇許多陷阱，而這些陷阱都是為了使蝙蝠俠打破自己的原則，如不殺人與大公無私，而設下的。藉此，諾蘭透過這部電影呈現給觀眾的是，即使是所謂的超級英雄，也不見得總是百分之百的善良與正義。當關係到自己的利益時，每一個人都是自私的。</p>
+				<p>另一方面，「黑暗騎士」爆紅的另一個重要因素便是小丑。小丑是蝙蝠俠漫畫系列中的主要反派之一。這個角色長期保持在超級英雄故事中最迷人的反派，可說是長期「住」在反派角色人氣榜首的位置上了。小丑與其他超級英雄反派相當不同。一般的反派角色傾向於物理上的傷害人們，如強盜、綁架與殺人，而且他們通常是獨自犯罪。然而，小丑處在另一個層級。小丑通常不直接傷害他人，而是喜歡設下圈套，而他最喜歡的圈套便是將人們逼入兩難的絕境。這些兩難的絕境往往挑戰著人們的品格。在電影中，我們可以看到小丑慫恿蝙蝠俠殺掉自己、在愛人瑞秋與哥譚市的「光明騎士」哈維丹特中散則拯救瑞秋。除此之外，小丑還更進一步地挑戰兩艘船上的市民與罪犯引爆對方船上的炸彈殺死對面的所有人。我們可以看出，小丑喜歡製造恐慌並引誘大家進入他所設下的陷阱。換言之，別的反派傷人，而這個小丑誅心。</p>
+			</section>
 		</article>
 	</body>
 </html>
