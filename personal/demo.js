@@ -1,4 +1,5 @@
 var menuOpen = false;
+var translate = false;
 
 function showHideMenuItems (event) {
 	event.stopPropagation();
@@ -25,7 +26,21 @@ function hideMenuItems () {
 	menuOpen = false;
 }
 
+function Translate (event) {
+	let articles = $('article');
+	if (translate) {
+		articles.eq(0).addClass('show');
+		articles.eq(1).removeClass('show');
+		translate = false;
+	} else {
+		articles.eq(0).removeClass('show');
+		articles.eq(1).addClass('show');
+		translate = true;
+	}
+}
+
 window.onload = function () {
 	$('nav > a:first-of-type').on('click', showHideMenuItems);
+	$('button').on('click', Translate);
 	$(document).on('click', hideMenuItems);
 }

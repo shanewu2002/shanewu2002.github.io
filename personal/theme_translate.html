@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<title>Shane Wu's Personal Website: Theme Article</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="style.css">
+		<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+		<script src="demo.js"></script>
+		<script>
+			function checkRestorePars () {
+				let vpHeight = $(window).height();
+				let scrollTop = $(window).scrollTop();
+				let paragraphs = $('section > p');
+				paragraphs.each(function (index) {
+					let paragraphTop = $(this).offset().top;
+					if(vpHeight + scrollTop - 50 > paragraphTop) {
+						$(this).addClass('scrolled');
+					}
+				});
+			}
+
+			function checkRestoreH3s () {
+				let vpHeight = $(window).height();
+				let scrollTop = $(window).scrollTop();
+				let h3s = $('section > h3');
+				h3s.each(function (index) {
+					let h3Top = $(this).offset().top;
+					if(vpHeight + scrollTop - 50 > h3Top) {
+						$(this).addClass('scrolled');
+					}
+				});
+			}
+
+			$(document).ready(function () {
+			});
+
+			window.onload = function () {
+				checkRestorePars();
+				checkRestoreH3s();
+				$(document).on('scroll', checkRestorePars);
+				$(document).on('scroll', checkRestoreH3s);
+				$('nav > a:first-of-type').on('click', showHideMenuItems);
+				$(document).on('click', hideMenuItems);
+				$('button').on('click', Translate);
+			};
+		</script>
+	</head>
+	<body>
+		<img src="img/batman_joker_background.jpeg" class="background" />
+		<nav>
+			<a><span style="display: inline-block;">+</span></a><a href="index.html">Home</a><a href="bio.html">Biography</a><a href="theme.html">Theme Article</a>
+		</nav>
+		<a class="translate" href="theme.html">translate</a>
+		<article>
+			<section>
+				<h3>蝙蝠俠：黑暗騎士</h3>
+				<p>過去幾年來，超級英雄電影儼然已主宰了整個電影產業。許多漫畫書中的超級英雄被搬上大螢幕。過去十年來，漫威似乎引領了整個產業。漫威宇宙系列電影不斷地吸引不分老少、來自各行各業的觀眾進入電影院，提供粉絲們令人驚豔的聲光特效。雖然現在有許多超級英雄電影上映，但由克里斯多福諾蘭執導以及希斯萊傑出演小丑的「蝙蝠俠：黑暗騎士」依舊被普遍認為是近幾十年來最偉大的一部超級英雄電影。</p>
+				<p>.</p>
+				<p>.</p>
+				<p>.</p>
+				<p>.</p>
+				<p>.</p>
+				<p>...電影情節摘要會在之後補上...</p>
+				<p>.</p>
+				<p>.</p>
+				<p>.</p>
+				<p>.</p>
+				<p>.</p>
+				<p>諾蘭的蝙蝠俠系列一共有三部電影，而「黑暗騎士」是其中的第二部，也被認為是其中最優秀的一部作品。這部作品之所以如此成功，其背後有許多原因。首先，身為一位世界知名的導演，諾蘭的執導功力以及他透過這部電影想要傳達給世界的訊息都在超級英雄電影的領域中立下了一大里程碑。相較於現今的超級英雄電影，「黑暗騎士」並沒有使用炫酷的聲光特效，而聲光特效基本上是近期的超級英雄電影中最重要的元素之一。雖然如此，整部電影的情節安排、緊張刺激的氣氛營造以及許多令人意想不到的故事走向依舊相當引人入勝。直至今日，「黑暗騎士」也可能依舊是目前為止唯一一部「黑色超級英雄電影」。其他超級英雄主要探討的，都是主角的光明面，故事通常描繪主角是如何觸底反彈、逆風高飛，打擊惡勢力並幫助他人。與之不同的是，「黑暗騎士」闡述了一個較為黑暗的故事。在故事中，主角蝙蝠俠在整部電影中不斷地遭遇許多陷阱，而這些陷阱都是為了使蝙蝠俠打破自己的原則，如不殺人與大公無私，而設下的。藉此，諾蘭透過這部電影呈現給觀眾的是，即使是所謂的超級英雄，也不見得總是百分之百的善良與正義。當關係到自己的利益時，每一個人都是自私的。</p>
+				<p>另一方面，「黑暗騎士」爆紅的另一個重要因素便是小丑。小丑是蝙蝠俠漫畫系列中的主要反派之一。這個角色長期保持在超級英雄故事中最迷人的反派，可說是長期「住」在反派角色人氣榜首的位置上了。小丑與其他超級英雄反派相當不同。一般的反派角色傾向於物理上的傷害人們，如強盜、綁架與殺人，而且他們通常是獨自犯罪。然而，小丑處在另一個層級。小丑通常不直接傷害他人，而是喜歡設下圈套，而他最喜歡的圈套便是將人們逼入兩難的絕境。這些兩難的絕境往往挑戰著人們的品格。在電影中，我們可以看到小丑慫恿蝙蝠俠殺掉自己、在愛人瑞秋與哥譚市的「光明騎士」哈維丹特中散則拯救瑞秋。除此之外，小丑還更進一步地挑戰兩艘船上的市民與罪犯引爆對方船上的炸彈殺死對面的所有人。我們可以看出，小丑喜歡製造恐慌並引誘大家進入他所設下的陷阱。換言之，別的反派傷人，而這個小丑誅心。</p>
+			</section>
+		</article>
+	</body>
+</html>
