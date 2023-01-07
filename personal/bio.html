@@ -6,63 +6,38 @@
 		<link rel="stylesheet" href="style.css">
 		<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 		<script src="demo.js"></script>
-		<script>
-			function checkRestorePars () {
-				let vpHeight = $(window).height();
-				let scrollTop = $(window).scrollTop();
-				let paragraphs = $('section > p');
-				paragraphs.each(function (index) {
-					let paragraphTop = $(this).offset().top;
-					if(vpHeight + scrollTop - 50 > paragraphTop) {
-						$(this).addClass('scrolled');
-					}
-				});
-			}
-
-			function checkRestoreH3s () {
-				let vpHeight = $(window).height();
-				let scrollTop = $(window).scrollTop();
-				let h3s = $('section > h3');
-				h3s.each(function (index) {
-					let h3Top = $(this).offset().top;
-					if(vpHeight + scrollTop - 50 > h3Top) {
-						$(this).addClass('scrolled');
-					}
-				});
-			}
-
-			$(document).ready(function () {
-			});
-
-			window.onload = function () {
-				checkRestorePars();
-				checkRestoreH3s();
-				$(document).on('scroll', checkRestorePars);
-				$(document).on('scroll', checkRestoreH3s);
-				$('nav > a:first-of-type').on('click', showHideMenuItems);
-				$(document).on('click', hideMenuItems);
-				// $('button').on('click', Translate);	
-			};
-		</script>
 	</head>
 	<body>
 		<img src="img/bio_background.jpeg" class="background" />
-		<!-- <button>translate</button> -->
 		<nav>
 			<a><span style="display: inline-block;">+</span></a><a href="index.html">Home</a><a href="bio.html">Biography</a><a href="theme.html">Theme Article</a>
-			<a class="translate" href="bio_translate.html">translate</a>
-			<!-- <button>translate</button> -->
 		</nav>
+		<a class="translate" href="bio_translate.html">中文</a>
+		<div id="backToTop_bio">↑</div>
 		<article>
+			<h1>Biography</h1>
+			<h2>Shane Wu's Biography</h2>
 			<figure style="text-align: center;">
 				<img src="img/shane.JPG" style="max-width: 30vw; opacity: 1; padding: 3vh;" />
 			</figure>
 			<section>
-				<h3>About Me...</h3>
+				<h3>About Me</h3>
 				<p>My name is Shih-Hsuan Wu, you can also call me Shane. I am studying at the department of electrical engineering in National Tsing Hua University. Born on January 21, 2002 as an Aquarius, I am a person with diversity who usually think like an alien and have lots of hobbies.</p>
+			</section>
+			<section>
+				<h3>Working Out</h3>
 				<p>Since I am 20 years old now, I care about my appearance, which means I like to spend time working out in the gym. As I am not satisfied with my shape yet, I make every endeavor to go to gym every day.</p>
+			</section>
+			<section>
+				<h3>Korean Dramas</h3>
 				<p>After a heartbreaking breakup with my ex-girlfriend two years ago, I tried to ignore the pain by watching Korean dramas. I became a huge fan of Korean dramas. Although I enjoy romantic dramas, my favorite genre is always detective dramas. During the summer and winter vacations, the happiest thing for me is to watch dramas all day in bed.</p>
+			</section>
+			<section>
+				<h3>Music</h3>
 				<p>As a music lover, I enjoy a lot of type of music, such as Chinese pop songs, Pop, Kpop, and even songs composed by aboriginal singers. I also enjoy watching music producers’ reaction video to some popular compositions to get to know more about the details concerning the process of those incredible songs.</p>
+			</section>
+			<section>
+				<h3>Anticipations</h3>
 				<p>Studying electrical engineering is an exhausting and time-consuming journey. Though I have little interest in electrical engineering, I will thrive to retain perseverance until I graduate from NTHU. I believe that hard work will betray no one. As a result, I would like to take certain things seriously, looking forward to becoming a better person.</p>
 			</section>
 		</article>

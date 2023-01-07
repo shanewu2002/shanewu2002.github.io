@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora&family=Poppins&family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Bitter&family=Courgette&family=Lilita+One&family=Noto+Sans+HK&family=Permanent+Marker&family=Righteous&family=Yeon+Sung&display=swap');
 
 * {
 	box-sizing: border-box;
@@ -17,43 +17,35 @@ body {
 	overflow-x: hidden;
 	background-color: white;
 	color: #000a16;
-	font-family: Lora, serif;
-	font-size: 2.4vh;
-	line-height: 3.6vh;
-}
-
-h1, h2, h3 {
-	font-family: Poppins, sans-serif;
+	font-family: 'Bitter', 'Noto Sans HK', serif;
+	font-size: 2.6vh;
+	line-height: 3.9vh;
+	transition: all 1s ease-out;
 }
 
 h1 {
-	font-size: 4.8vh;
-	line-height: 7.2vh;
-	margin: 1vh 0;
+	font-size: 6vh;
+	color: firebrick;
+	line-height: 9vh;
+	margin: 2vh 0;
+	font-family: 'Lilita One', 'Noto Sans HK', cursive;
 }
 
 h2 {
-	font-size: 3.6vh;
-	line-height: 5.4vh;
-	margin: 0.8vh 0;
+	color: black;
+	text-align: center;
+	font-size: 5vh;
+	line-height: 7.5vh;
+	margin: 2vh 0;
+	font-family: 'Permanent Marker', 'Noto Sans HK', cursive;
 }
 
 h3 {
-	position: relative;
-	top: 100px;
-	font-size: 3vh;
-	line-height: 4.5vh;
-	margin: 0.5vh 0;
-	transition: all 1s ease-out;
-}
-
-h3.scrolled {
-	position: relative;
-	top: 0px;
-	font-size: 3vh;
-	line-height: 4.5vh;
-	margin: 0.5vh 0;
-	transition: all 1s ease-out;
+	color: white;
+	font-size: 4vh;
+	line-height: 6vh;
+	margin: 1vh 0;
+	font-family: 'Courgette', 'Noto Sans HK', cursive;
 }
 
 nav {
@@ -61,21 +53,21 @@ nav {
 	z-index: 999;
 	top: 10px;
 	left: 10px;
-	text-align: center;
-	font-family: Poppins, sans-serif;
-	font-size: 2vh;
-	line-height: 3vh;
+	font-size: 3vh;
+	line-height: 4.5vh;
 }
 
 nav > a {
+	font-family: 'Righteous', 'Noto Sans HK', cursive;
 	display: inline-block;
 	vertical-align: middle;
 	background-color: black;
 	color: white;
 	text-decoration: none;
+	text-align: center;
 	opacity: 0.6;
 	cursor: pointer;
-	height: 25px;
+	height: 40px;
 	border-radius: 15%;
 	transition: opacity 1s ease-out
 }
@@ -101,8 +93,8 @@ nav > a:not(:first-of-type) {
 }
 
 nav > a.open {
-	width: 10vw;
-	border-left: 2px solid gray;
+	width: 200px;
+	border-left: 10px solid darkred;
 	transition: all 1s ease-out;
 }
 
@@ -115,37 +107,111 @@ nav > a > span.rotated {
 	transition: all 0.5s ease-out;
 }
 
-article {
-	margin: 1.5vh;
-	padding: 1vh 15vw;
-	display: block;
+a.translate {
+	font-family: 'Righteous', 'Noto Sans HK', cursive;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	background-color: black;
+	font-size: 80%;
+	color: white;
+	padding: 0.5vh 1vw;
+	text-decoration: none;
+	opacity: 0.5;
+	cursor: pointer;
+	position: fixed;
+	top: 75%;
+	left: 90%;
+	width: 8vw;
+	border-radius: 20%;
 	transition: all 1s ease-out;
 }
 
-/*article.show {
+a.translate:hover {
+	opacity: 1;
+	transition: all 1s ease-out;
+}
+
+div#backToTop_theme,  div#backToTop_bio {
+	font-family: 'Righteous', 'Noto Sans HK', cursive;
+	text-align: center;
+	display: none;
+	position: fixed;
+	left: 90%;
+	bottom: 10%;
+	background-color: black;
+	color: white;
+	padding: 0.5vh 1vw;
+	font-size: 80%;
+	opacity: 0.5;
+	width: 8vw;
+	bottom: 10vh;
+	vertical-align: middle;
+	border-radius: 20%;
+	white-space: nowrap;
+	overflow-x: hidden;
+	cursor: pointer;
+	transition: all 1s ease-out;
+}
+
+div#backToTop_theme:hover, div#backToTop_bio:hover {
+	opacity: 1;
+	transition: all 1s ease-out;
+}
+
+/*div#backToTop_theme.display, div#backToTop_bio.display {
+	display: initial;
+	opacity: 0.5;
+	width: 10vw;
+	transition: all 1s ease-out;
+}
+
+div#backToTop_theme.display:hover, div#backToTop_bio.display:hover {
+	opacity: 1;
+	transition: all 1s ease-out;
+}
+*/
+article {
+	margin: 3vh;
+	padding: 1vh 12vw;
 	display: block;
 	transition: all 1s ease-out;
-}*/
+}
 
 section {
-	margin: 1.2vh 0;
+	opacity: 0;
+	top: 100px;
+	position: relative;
+	margin: 15vh 0;
+	transition: all 1s ease-out;
 }
 
-section > p {
-	text-indent: 5%;
+section.scrolled {
+	opacity: 1;
+	top: 0px;
+	transition: all 1s ease-out;
+}
+
+figure {
+	position: relative;
+	top: 0px;
+	transition: all 1s ease-out;
 }
 
 p {
-	margin: 0.2vh 0;
-}
-
-a, a:visited {
-	color: #323232;
-	text-decoration: underline;
+	text-indent: 5%;
+	margin: 1vh 0;
 }
 
 img {
+	opacity: 0.7;
+	border-radius: 5%;
+	transition: all 1s ease-out;
+}
+
+img:hover {
 	opacity: 1;
+	transition: all 1s ease-out;
 }
 
 img.background {
@@ -153,47 +219,156 @@ img.background {
 	opacity: 40%;
 	position: fixed;
 	top: 0px;
-}
-
-p {
-	opacity: 0;
-	position: relative;
-	top: 100px;
+	border-radius: 0%;
 	transition: all 1s ease-out;
 }
 
-p.scrolled {
-	opacity: 1;
-	position: relative;
-	top: 0px;
-	transition: all 1s ease-out;
-}
-
-a.translate {
-	display: inline-block;
-	vertical-align: middle;
-	text-align: center;
-	background-color: black;
-	color: white;
-	text-decoration: none;
-	opacity: 0.6;
-	cursor: pointer;
+img#joker {
 	position: fixed;
-	top: 10px;
-	right: 10px;
-	width: 100px;
-	height: 40px;
-	border-radius: 50%;
+	left: 2vw;
+	width: 10vw;
+	transition: all 1s ease-out;
+	animation: bouncingJoker 10s linear infinite;
+}
+
+/*img#joker.reset {
+	top: 0vh;
+	transition: all 1s ease-out;
+}*/
+
+figcaption {
+	display: inline-block;
+	position: absolute;
+	background-color: transparent;
+	color: white;
+	font-family: 'Yeon Sung', 'Noto Sans HK', cursive;
+	font-size: 100%;
+	text-align: center;
+	width: 0px;
+	z-index: 999;
+	overflow-x: hidden;
+	white-space: nowrap;
 	transition: all 1s ease-out;
 }
 
-a.translate:hover {
-	opacity: 1;
-	cursor: pointer;
-	/*position: fixed;
-	top: 10px;
-	right: 10px;
-	border-radius: 15%;
-	background-color: black;*/
+.parent:hover .child {
+	width: 150px;
 	transition: all 1s ease-out;
+}
+
+@keyframes resetJoker {
+	from {
+
+	}
+	to {
+		top: 0vh;
+	}
+}
+
+@keyframes bouncingJoker {
+	0% {
+		top: 0vh;
+		opacity: 0.5;
+	}
+	5% {
+		top: 15vh;
+		opacity: 1;
+	}
+	10% {
+		top: 10vh;
+		opacity: 0.5;
+	}
+	15% {
+		top: 25vh;
+		opacity: 1;
+	}
+	20% {
+		top: 20vh;
+		opacity: 0.5;
+	}
+	25% {
+		top: 35vh;
+		opacity: 1;
+	}
+	30% {
+		top: 30vh;
+		opacity: 0.5;
+	}
+	35% {
+		top: 45vh;
+		opacity: 1;
+	}
+	40% {
+		top: 40vh;
+		opacity: 0.5;
+	}
+	45% {
+		top: 55vh;
+		opacity: 1;
+	}
+	50% {
+		top: 50vh;
+		opacity: 0.5;
+	}
+	55% {
+		top: 65vh;
+		opacity: 1;
+	}
+	60% {
+		top: 60vh;
+		opacity: 0.5;
+	}
+	65% {
+		top: 75vh;
+		opacity: 1;
+	}
+	70% {
+		top: 70vh;
+		opacity: 0.5;
+	}
+	75% {
+		top: 85vh;
+		opacity: 1;
+	}
+	80% {
+		top: 80vh;
+		opacity: 0.5;
+	}
+	85% {
+		top: 85vh;
+		opacity: 1;
+	}
+	90% {
+		top: 80vh;
+		opacity: 0;
+	}
+	95% {
+		top: 85vh;
+		opacity: 1;
+	}
+	100% {
+		top: 0vh;
+		opacity: 0.5;
+	}
+}
+
+@media only screen and (max-width: 1200px) {
+	body {
+		background-color: gray;
+		color: white;
+		transition: all 1s ease-out;
+	}
+	img.background {
+		display: none;
+		width: 100%;
+		opacity: 40%;
+		position: fixed;
+		top: 0px;
+		border-radius: 0%;
+		transition: all 1s ease-out;
+	}
+	nav > a:not(:first-of-type).open {
+		width: 140px;
+		border-left: 1px solid darkred;
+	}
 }
