@@ -7,33 +7,48 @@
 		<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 		<script src="demo.js"></script>
 		<script>
+			// Pretty much the same as the checkRestoreDIV function in Example 12-3
 			function checkRestoreSecs () {
 				let vpHeight = $(window).height();
 				let scrollTop = $(window).scrollTop();
 				let sections = $('article > section');
 				sections.each(function (index) {
+					// In each(), we can also use "this" to refer to the element
+					// that is current taken out of the "sections" variable. Thus,
+					// "index" could be redundant with the use of "this"
 					let sectionTop = $(this).offset().top;
 					if(vpHeight + scrollTop - 100 > sectionTop) {
-						$(this).css('top', 0);
+						//$(this).css('top', 0);
+						$(this).animate(
+							{top: 0, opacity: 1},
+							1000
+						);
 					}
 				});
 			}
 
-			$(document).ready(function () {
-				
-			});
-
 			window.onload = function () {
+				// Run checkRestoreSecs() when the HTML document is fully loaded...
 				checkRestoreSecs();
+				// Bind the entire document to scrolling events that would trigger checkRestoreSecs()...
 				$(document).on('scroll', checkRestoreSecs);
+				/* One tricky part that I forgot to explain to you is that you need to run the same binding
+				   process that was done in demo.js. The reason is that "window.onload" could only be assigned
+				   one function. When assign the current function to "window.onload", the function assigned to
+				   "window.onload" previously in demo.js is "overwritten". Thus, to make the special effects on
+				   the menu work again, we have to do the same binding process in this function. However, we do
+				   not have to repeat the codes for "showHideMenuItems" and "hideMenuItems" in this <script> block,
+				   because the two functions are already imported with demo.js.
+				*/
 				$('nav > a:first-of-type').on('click', showHideMenuItems);
 				$(document).on('click', hideMenuItems);
 			};
 		</script>
 		<style>
-			section {
+			article > section {
 				position: relative;
 				top: 50px;
+				opacity: 0;
 			}
 
 			span.joint {
@@ -59,7 +74,7 @@
 				text-indent: 0;
 			}
 
-			span.vocab:hover > span{
+			span.vocab:hover > span {
 				display: block;
 			}
 		</style>
