@@ -358,6 +358,7 @@ figcaption {
 		color: white;
 		transition: all 1s ease-out;
 	}
+
 	img.background {
 		display: none;
 		width: 100%;
@@ -367,8 +368,14 @@ figcaption {
 		border-radius: 0%;
 		transition: all 1s ease-out;
 	}
+
 	nav > a:not(:first-of-type).open {
 		width: 140px;
 		border-left: 1px solid darkred;
+	}
+
+	h3 {
+		color: darkred;
+		transition: all 1s ease-out;
 	}
 }
